@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/r_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/splashbk">
+
+
+
+    <ImageView
+        android:id="@+id/iv_splash_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:src="@drawable/shenmatran" />
+        <TextView
+        android:id="@+id/iv_splash_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+         android:layout_below="@+id/iv_splash_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="手机卫士"
+        android:textSize="50px" />
+
+    <TextView
+        android:id="@+id/iv_splash_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_splash_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        android:textSize="40px" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
+
+</RelativeLayout>

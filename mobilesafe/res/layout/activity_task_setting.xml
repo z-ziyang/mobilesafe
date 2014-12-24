@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hard="http://schemas.android.com/apk/res/com.mobile.safe"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E90FF"
+        android:gravity="center"
+        android:text="任务管理设置"
+        android:textColor="@color/black"
+        android:textSize="23sp" />
+
+    <CheckBox
+        android:id="@+id/cb_task_setting_showsystem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="显示系统进程" />
+
+   <com.mobile.safe.ui.SettingView
+        android:id="@+id/ch_task_autokill"
+        hard:title="定时清理设置"
+        hard:checked_text="清理设置已经开启"
+        hard:unchecked_text="清理设置没有开启"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.mobile.safe.ui.SettingView>
+
+</LinearLayout>

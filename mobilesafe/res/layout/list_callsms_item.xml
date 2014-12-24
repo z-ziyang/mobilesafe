@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_call_sms_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/black_light"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_call_sms_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_call_sms_number"
+        android:layout_below="@+id/tv_call_sms_number"
+        android:text="Small Text"
+        android:textColor="@color/black_light"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip" />
+
+    <ImageView
+        
+        android:id="@+id/iv_callsms_delete"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/delete_bg_selector" />
+
+</RelativeLayout>

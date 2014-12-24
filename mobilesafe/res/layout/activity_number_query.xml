@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="#1E90FF"
+        android:gravity="center"
+        android:text="号码归属地查询"
+        android:textSize="23dip" />
+
+    <EditText
+        android:id="@+id/et_numberquery"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:layout_marginTop="15dip"
+        android:id="@+id/bt_query"
+        android:onClick="numberQuery"
+        android:layout_width="80dip"
+        android:layout_height="30dip"
+        android:layout_gravity="center"
+        android:background="@drawable/button_bg_selector"
+        android:text="查询" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:text="归属地为:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

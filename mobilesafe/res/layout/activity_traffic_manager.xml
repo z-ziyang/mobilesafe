@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="#1E90FF"
+        android:gravity="center"
+        android:text="流量统计"
+        android:textColor="@color/black"
+        android:textSize="23sp" />
+    <!--  -->
+    <SlidingDrawer
+        android:id="@+id/sliding"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:content="@+id/allApps"
+        android:handle="@+id/handle"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_local" />
+
+        <GridView  
+            android:id="@+id/allApps"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:background="@drawable/file_list_bg"  
+            android:columnWidth="60dp"  
+            android:gravity="center"  
+            android:horizontalSpacing="10dp"  
+            android:numColumns="auto_fit"  
+            android:padding="10dp"  
+            android:stretchMode="columnWidth"  
+            android:verticalSpacing="10dp" />  
+    </SlidingDrawer>
+
+</LinearLayout>

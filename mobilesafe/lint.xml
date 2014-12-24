@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="CommitPrefEdits" severity="ignore" />
+    <issue id="ContentDescription">
+        <ignore path="res/layout/activity_setup2.xml" />
+    </issue>
+    <issue id="HandlerLeak" severity="ignore" />
+    <issue id="HardcodedText">
+        <ignore path="res/layout/activity_setup2.xml" />
+    </issue>
+    <issue id="ResourceAsColor" severity="ignore" />
+    <issue id="SdCardPath" severity="ignore" />
+    <issue id="UseSparseArrays" severity="ignore" />
+</lint>

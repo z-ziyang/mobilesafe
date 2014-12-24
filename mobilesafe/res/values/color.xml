@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="trans">#00000000</color>
+    <color name="gray">#ddd</color>
+    <color name="black_light">#2F4F4F</color>
+    <color name="white">#ffffffff</color>
+    <color name="alicBlue">#F0F8FF</color>
+    <color name="Orchid">#DA70D6</color>
+    <color name="black"> #000000</color>
+
+</resources>

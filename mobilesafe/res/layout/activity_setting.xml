@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hard="http://schemas.android.com/apk/res/com.mobile.safe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:background="#1E90FF"
+        android:gravity="center"
+        android:text="设置中心"
+        android:textSize="35px" />
+
+    <com.mobile.safe.ui.SettingView
+        android:id="@+id/sv_setting_update"
+        hard:title="自动更新设置"
+        hard:checked_text="自动更新已经开启"
+        hard:unchecked_text="自动更新没有开启"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.mobile.safe.ui.SettingView>
+       <com.mobile.safe.ui.SettingView
+        android:id="@+id/sv_setting_show_address"
+        hard:title="号码归属地的设置"
+        hard:checked_text="号码归属地查询已经开启"
+        hard:unchecked_text="号码归属地查询没有开启"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.mobile.safe.ui.SettingView> 
+<RelativeLayout
+        android:background="@drawable/home_selector"
+        android:id="@+id/rl_setting_changebg"
+        android:layout_width="match_parent"
+        android:layout_height="64dip" >
+
+        <TextView
+            android:id="@+id/tv_setting_addressbg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dip"
+            android:layout_marginTop="5dip"
+            android:text="归属地提示框风格"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tv_setting_addressbg_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_setting_addressbg"
+            android:layout_marginLeft="7dip"
+            android:layout_marginTop="5dip"
+            android:text="半透明" />
+
+        <ImageView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/jiantou1" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+              android:background="@color/black_light"/>
+    </RelativeLayout> 
+  <RelativeLayout
+        android:background="@drawable/home_selector"
+        android:id="@+id/rl_setting_change_location"
+        android:layout_width="match_parent"
+        android:layout_height="64dip" >
+
+        <TextView
+            android:id="@+id/tv_setting_addressbg_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dip"
+            android:layout_marginTop="5dip"
+            android:text="归属地提示框位置"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_setting_addressbg_location"
+            android:layout_marginLeft="7dip"
+            android:layout_marginTop="5dip"
+            android:text="设置归属地提示框的位置" />
+
+        <ImageView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/jiantou1" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black_light" >
+        </View>
+    </RelativeLayout>  
+       <com.mobile.safe.ui.SettingView
+        android:id="@+id/sv_setting_callsmsfirewall"
+        hard:title="短信防火墙开启设置"
+        hard:checked_text="短信防火墙已经开启"
+        hard:unchecked_text="短信防火墙没有开启"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.mobile.safe.ui.SettingView>    
+         <com.mobile.safe.ui.SettingView
+        android:id="@+id/sv_setting_applock"
+        hard:title="程序锁开启设置"
+        hard:checked_text="程序锁已经开启"
+        hard:unchecked_text="程序锁没有开启"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.mobile.safe.ui.SettingView>    
+</LinearLayout>

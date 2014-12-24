@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mobile.safe"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="10" />
+    <!-- JUnit测试 设置 -->
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="junitTest"
+        android:targetPackage="com.mobile.safe" >
+    </instrumentation>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+
+    <application
+        android:name="MoblieSafeApplication"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/shenmatran"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="com.mobile.safe.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- 广播过滤 设置快捷键 -->
+            <intent-filter>
+                <action android:name="com.mobile.safe" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeActivity" >
+        </activity>
+        <activity android:name=".SettingActivity" >
+        </activity>
+        <activity android:name=".LostFindActivity" >
+        </activity>
+        <activity android:name=".Setup1Activity" >
+        </activity>
+        <activity android:name=".Setup2Activity" >
+        </activity>
+        <activity android:name=".Setup3Activity" >
+        </activity>
+        <activity android:name=".Setup4Activity" >
+        </activity>
+        <activity android:name=".SelectContactActivity" >
+        </activity>
+        <activity android:name=".AtoolsActivity" >
+        </activity>
+        <activity android:name=".NumberQueryActivity" >
+        </activity>
+        <activity android:name=".CommonNumberActivity" >
+        </activity>
+        <activity android:name=".AppManagerActivity" >
+        </activity>
+        <activity android:name=".TaskManagerActivity" >
+        </activity>
+        <activity android:name=".TaskSettingActivity" >
+        </activity>
+        <activity android:name=".AppLockActivity" >
+        </activity>
+        <activity android:name=".TrafficManagerActivity" >
+        </activity>
+        <activity android:name=".SystemOptActivity" >
+        </activity>
+        <activity android:name=".CleanCacheActivity" >
+        </activity>
+        <activity android:name=".CleanSDActivity" >
+        </activity>
+         <activity android:name=".CleanStartupActivity" >
+        </activity>       
+        <!-- 移除 最近开启的应用列表  game应用 -->
+        <activity
+            android:name=".EnterPasswrodActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" >
+        </activity>
+        <activity
+            android:name=".CallSmsSafeActivity"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name=".EditBlackNumberDialog"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <!-- 毛玻璃显示效果 -->
+        <activity
+            android:name=".DragViewActivity"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+
+        <service android:name=".service.ShowLocationService" >
+        </service>
+        <service android:name=".service.CallSmsFireWallService" >
+        </service>
+        <service android:name=".service.AutoKillService" >
+        </service>
+        <service android:name=".service.UpdateWidgetService" >
+        </service>
+        <service android:name=".service.WatchDogService" >
+        </service>
+
+        <receiver android:name="com.mobile.safe.receiver.OutCallReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mobile.safe.receiver.BootCompleteReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mobile.safe.receiver.SMSReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.mobile.safe.receiver.MyAdmin"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mobile.safe.receiver.MyWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_info" />
+        </receiver>
+        <receiver android:name="com.mobile.safe.receiver.KillProcessReceiver" >
+            <intent-filter>
+                <action android:name="com.mobile.safe.killprocess" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
