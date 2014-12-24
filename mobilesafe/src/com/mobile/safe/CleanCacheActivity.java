@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageStats;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -52,13 +53,22 @@ public class CleanCacheActivity extends Activity {
 						@Override
 						public void onClick(View v) {
 							// TODO Auto-generated method stub
-							//适配不同版本
 							String packname = info.getPackname();
-							Intent intent = new Intent();
-							intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-							intent.setData(Uri.parse("package:" + packname));
-							startActivity(intent);
-							
+							// 适配不同版本
+							if (Build.VERSION.SDK_INT >= 9) {
+								Intent intent = new Intent();
+								intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+								intent.setData(Uri.parse("package:" + packname));
+								startActivity(intent);
+							} else {
+								Intent intent = new Intent();
+								intent.setAction(Intent.ACTION_VIEW);
+								intent.addCategory(Intent.CATEGORY_DEFAULT);
+								intent.addCategory("android.intent.category.VOICE_LAUNCH");
+								intent.putExtra("pkg", packname);
+								startActivity(intent);
+							}
+
 						}
 					});
 					ImageView iv = (ImageView) view
@@ -122,7 +132,7 @@ public class CleanCacheActivity extends Activity {
 			public void run() {
 				List<PackageInfo> infos = pm.getInstalledPackages(0);
 				listener.beforeScann(infos.size(),
-						infos.get(infos.size()-1).packageName);
+						infos.get(infos.size() - 1).packageName);
 				int total = 0;
 				for (PackageInfo info : infos) {
 					String packname = info.packageName;

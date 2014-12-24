@@ -48,7 +48,6 @@ public class AppInfoProvider {
 
 				}
 			}
-
 			String packagename = packageInfo.packageName;
 			appInfo.setPackname(packagename);
 
